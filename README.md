@@ -1,5 +1,5 @@
 
-##探究git的基础工作原理
+## 探究git的基础工作原理
 [简书地址](http://www.jianshu.com/p/9524e1aebc23)
 
 git基本命令还可以参考Pro Git;
@@ -15,7 +15,7 @@ Command + D  垂直分隔当前标签页
 Command + Shift + D 水平分隔当前标签页
 Command + shift +  {或}向左/向右切换标签
 
-##git基本操作流程
+## git基本操作流程
 1. 创建测试文件夹，名字我命名为JHGit;
 ```
 mkdir JHGit
@@ -136,8 +136,8 @@ git log
 
 从上面几幅图可以看出，提交的commit消息，最新的commit id和origin的commit id都会被保存
 
-##下面引入git的主要工作方式
-#####三个区域
+## 下面引入git的主要工作方式
+##### 三个区域
 - 工作区
 - 暂存区
 - git仓库
@@ -145,7 +145,7 @@ git log
 
 ![](https://git-scm.com/book/en/v2/images/areas.png)
 
-#####四种状态
+##### 四种状态
 已跟踪(tracked)已提交（commited） 已修改（modified） 已缓存（staged）
 
 - 在工作目录中修改某些文件
@@ -157,18 +157,18 @@ git log
 - Changes to be committed：已存入缓存状态
 
 - Untracked files： git  不会自动将之纳入跟踪范围
-#####Four States
+##### Four States
 
 ![](https://git-scm.com/book/en/v2/images/lifecycle.png)
 
-####git 原理工作图
+#### git 原理工作图
 ![](https://git-scm.com/images/reset/ex3.png)
 ![](https://git-scm.com/images/reset/ex4.png)
 ![](https://git-scm.com/images/reset/ex5.png)
 ![](https://git-scm.com/images/reset/ex6.png)
 ![](https://git-scm.com/images/reset/ex7.png)
 
-####暂存区index
+#### 暂存区index
 index文件是个二进制文件，用cat命令是无法打开的
 
 ![index 一堆乱码](http://upload-images.jianshu.io/upload_images/2310905-e9b732b9de00e9c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -187,7 +187,7 @@ hexdump -C index
 ![](http://upload-images.jianshu.io/upload_images/2310905-fd73050103fdd428.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-####总结
+#### 总结
 
 
 先打印log
@@ -206,7 +206,7 @@ git cat-file -p <commit id>
 ![](https://cbx33.github.io/gitt/images/chaps/f-af2-d1.png)
 ![](https://git-scm.com/book/en/v2/images/commit-and-tree.png)
 
-#####通过以上数据可以发现git所有功能都基于三棵树。
+##### 通过以上数据可以发现git所有功能都基于三棵树。
 - 第一棵树：所有提交的commit组成一棵树，分别指向不同版本的提交
 - 第二棵树：每个commit代表一棵树，里面包含所有指向子树的commit（tree），指向上一次的commit id（parent），每个tree里面有包含下一级的tree，blob文件的快照。
 - 第三课树：index暂存区
